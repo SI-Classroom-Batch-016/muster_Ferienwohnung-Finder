@@ -3,7 +3,7 @@
 In dieser Aufgabe wird eine App zum Anzeigen von Ferienwohnungen programmiert. Die Aufgabe ist es sich um die Datenbankanbindung zu kümmern.
 
 
-<img src=app/src/main/res/drawable/img.png width="33%" height="33%" style="display:block; margin:auto;"></img>
+<img src=app/src/main/res/drawable/img.png width="40%" height="40%" style="display:block; margin:auto;"></img>
 
 - Öffne das Projekt “FerienwohnungFinder” 
 - Öffne die Datei “AppartmentData” und schreibe die Entity für die Datenbank. Folgende Informationen sollen enthalten sein:
