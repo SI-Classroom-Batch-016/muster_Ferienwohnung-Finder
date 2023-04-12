@@ -54,12 +54,6 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        // Observer für den RecyclerView
-        viewModel.appartmentsLiveData.observe(this) {
-            (binding.rvAppartmentList.adapter as AppartmentAdapter).update(it)
-        }
-
-
         // Observer für die Toast Nachricht
         viewModel.showToast.observe(this) {
             if (it) {
