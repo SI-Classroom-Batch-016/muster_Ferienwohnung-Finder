@@ -41,7 +41,26 @@ class AppartmentAdapter(private val items:List<AppartmentData>): RecyclerView.Ad
      * @param position    Position des Elementes das gerade abgerufen wird
      */
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val data = items[position]
 
+        val binding = holder.binding
+
+        binding.txtTitle.text = data.title
+        binding.txtAddress.text = data.address
+
+        binding.imgAppartmentView.setImageResource(data.image)
+
+        binding.txtSleepRooms.text = data.sleepRooms.toString()
+        binding.txtSize.text = "${data.size} m²"
+        binding.txtPersons.text = data.persons.toString()
+
+        binding.txtPetsAllowed.text = if (data.petsAllowed) {
+            "Ja"
+        } else {
+            "Nein"
+        }
+
+        binding.txtPricePerNight.text = "${data.pricePerNight} €"
     }
 
 
@@ -52,6 +71,10 @@ class AppartmentAdapter(private val items:List<AppartmentData>): RecyclerView.Ad
      */
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    fun update(it: List<AppartmentData>?) {
+
     }
 
 

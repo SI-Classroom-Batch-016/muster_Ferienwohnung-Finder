@@ -17,6 +17,8 @@ interface AppartmentDao {
      * @param ItemData        Das Item das eingefügt werden soll
      */
     // todo: Schreibe eine Funktion mit der Daten in die Tabelle einfügt werden können
+    @Insert
+    fun insertItem(ItemData: AppartmentData)
 
     /* -------------------- Get Funktionen -------------------- */
 
@@ -26,6 +28,8 @@ interface AppartmentDao {
      * @return Alle Items der Tabelle listItem_table
      */
     // todo: Schreibe eine Funktion mit der alle Datensätze aus die Tabelle geholt werden können
+    @Query("SELECT * FROM appartment_table")
+    fun getItems(): List<AppartmentData>
 
     /**
      * Methode um sich die Anzahl der Elemente der appartment_table auszugeben
@@ -33,7 +37,8 @@ interface AppartmentDao {
      * @return Anzahl der Datensätze
      */
 	// todo: Schreibe eine Funktion welche die Anzahl der Datensätze zurückgibt
-
+    @Query("SELECT COUNT(*) FROM appartment_table")
+    fun getCount(): Int
 
     /* -------------------- Update Funktionen -------------------- */
 
