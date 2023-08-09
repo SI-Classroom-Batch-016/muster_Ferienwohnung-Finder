@@ -1,10 +1,10 @@
-package de.syntaxinstitut.ferienwohnungfinder.adapter
+package de.syntax_institut.ferienwohnungfinder.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import de.syntaxinstitut.ferienwohnungfinder.data.dataclasses.AppartmentData
-import de.syntaxinstitut.ferienwohnungfinder.databinding.ListItemAppartmentBinding
+import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import de.syntax_institut.ferienwohnungfinder.databinding.ListItemAppartmentBinding
 
 class AppartmentAdapter(private val items: List<AppartmentData>) :
     RecyclerView.Adapter<AppartmentAdapter.MyViewHolder>() {

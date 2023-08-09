@@ -1,4 +1,4 @@
-package de.syntaxinstitut.ferienwohnungfinder.data.dataclasses
+package de.syntax_institut.ferienwohnungfinder.data.dataclasses
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

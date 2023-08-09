@@ -1,11 +1,11 @@
-package de.syntaxinstitut.ferienwohnungfinder
+package de.syntax_institut.ferienwohnungfinder
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import de.syntaxinstitut.ferienwohnungfinder.data.dataclasses.AppartmentData
-import de.syntaxinstitut.ferienwohnungfinder.db.AppartmentDatabase.Companion.getDatabase
-import de.syntaxinstitut.ferienwohnungfinder.db.Repository
+import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import de.syntax_institut.ferienwohnungfinder.db.AppartmentDatabase.Companion.getDatabase
+import de.syntax_institut.ferienwohnungfinder.db.Repository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

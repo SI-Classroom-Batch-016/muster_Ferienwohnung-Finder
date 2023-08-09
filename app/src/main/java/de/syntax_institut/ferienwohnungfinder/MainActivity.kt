@@ -1,12 +1,12 @@
-package de.syntaxinstitut.ferienwohnungfinder
+package de.syntax_institut.ferienwohnungfinder
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import de.syntaxinstitut.ferienwohnungfinder.adapter.AppartmentAdapter
-import de.syntaxinstitut.ferienwohnungfinder.databinding.ActivityMainBinding
+import de.syntax_institut.ferienwohnungfinder.adapter.AppartmentAdapter
+import de.syntax_institut.ferienwohnungfinder.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

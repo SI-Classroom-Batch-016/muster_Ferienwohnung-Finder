@@ -1,10 +1,10 @@
-package de.syntaxinstitut.ferienwohnungfinder.db
+package de.syntax_institut.ferienwohnungfinder.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import de.syntaxinstitut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
 
 /**
  * Abstrakte Klasse um eine Datenbank zu verwalten

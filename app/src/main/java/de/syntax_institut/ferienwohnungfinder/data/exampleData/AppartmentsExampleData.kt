@@ -1,7 +1,7 @@
-package de.syntaxinstitut.ferienwohnungfinder.data.exampleData
+package de.syntax_institut.ferienwohnungfinder.data.exampleData
 
-import de.syntaxinstitut.ferienwohnungfinder.R
-import de.syntaxinstitut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import de.syntax_institut.ferienwohnungfinder.R
+import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
 
 object AppartmentsExampleData {
 

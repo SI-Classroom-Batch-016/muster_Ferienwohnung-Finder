@@ -1,7 +1,7 @@
-package de.syntaxinstitut.ferienwohnungfinder.db
+package de.syntax_institut.ferienwohnungfinder.db
 
 import androidx.room.*
-import de.syntaxinstitut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
 
 /**
  * Interface das die Methoden der Datenbank anbietet

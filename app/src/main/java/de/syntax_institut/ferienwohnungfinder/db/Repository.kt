@@ -1,7 +1,7 @@
-package de.syntaxinstitut.ferienwohnungfinder.db
+package de.syntax_institut.ferienwohnungfinder.db
 
-import de.syntaxinstitut.ferienwohnungfinder.data.dataclasses.AppartmentData
-import de.syntaxinstitut.ferienwohnungfinder.data.exampleData.AppartmentsExampleData
+import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import de.syntax_institut.ferienwohnungfinder.data.exampleData.AppartmentsExampleData
 
 class Repository(private val database: AppartmentDatabase) {
 

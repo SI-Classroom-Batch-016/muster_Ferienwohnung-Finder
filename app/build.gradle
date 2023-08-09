@@ -10,7 +10,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "de.syntaxinstitut.ferienwohnungfinder"
+        applicationId "de.syntax_institut.ferienwohnungfinder"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -37,7 +37,7 @@ android {
     buildFeatures {
         viewBinding true
     }
-    namespace 'de.syntaxinstitut.ferienwohnungfinder'
+    namespace 'de.syntax_institut.ferienwohnungfinder'
 }
 
 dependencies {
