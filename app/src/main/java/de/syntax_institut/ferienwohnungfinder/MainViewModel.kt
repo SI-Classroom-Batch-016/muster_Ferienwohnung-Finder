@@ -3,9 +3,10 @@ package de.syntax_institut.ferienwohnungfinder
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
+import androidx.lifecycle.viewModelScope
 import de.syntax_institut.ferienwohnungfinder.db.AppartmentDatabase.Companion.getDatabase
 import de.syntax_institut.ferienwohnungfinder.db.Repository
+import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -14,7 +15,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private var repository = Repository(database)
 
     /** Liste aller Appartments die im RecyclerView abgebildet werden */
-    val appartmentsLiveData = MutableLiveData<List<AppartmentData>>()
+    val appartmentsLiveData = repository.apartments
 
     /** True wenn ein Toast angezeigt werden soll */
     val showToast = MutableLiveData(false)
@@ -23,22 +24,26 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val countOfAppartments = MutableLiveData(0)
 
     init {
-        // Lade die Beispieldaten in die Datenbank wenn diese leer ist
-        repository.prepopulateDB()
+        viewModelScope.launch {
+            // Lade die Beispieldaten in die Datenbank wenn diese leer ist
+            repository.prepopulateDB()
 
-        // Lade die Anzahl an Appartments in der DB
-        countOfAppartments.value = repository.getCount()
+            // Lade die Anzahl an Appartments in der DB
+            countOfAppartments.value = repository.getCount()
 
-        // Zeige eine Toast Nachricht für die Anzahl der Appartments
-        showToast.value = true
+            // Zeige eine Toast Nachricht für die Anzahl der Appartments
+            showToast.value = true
+        }
     }
 
     /**
      * Lädt the Daten von der Datenbank in appartmentsLiveData
      */
     fun loadFromDatabase() {
-        // Lade alle Daten aus der DB in die Variable
-        appartmentsLiveData.value = repository.getAllItems()
+        viewModelScope.launch {
+            // Lade alle Daten aus der DB in die Variable
+            repository.getAllItems()
+        }
     }
 
     /**

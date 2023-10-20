@@ -1,36 +1,34 @@
 package de.syntax_institut.ferienwohnungfinder.db
 
-import de.syntax_institut.ferienwohnungfinder.data.dataclasses.AppartmentData
 import de.syntax_institut.ferienwohnungfinder.data.exampleData.AppartmentsExampleData
 
 class Repository(private val database: AppartmentDatabase) {
 
-    /* -------------------- Öffentliche Funktionen -------------------- */
+    val apartments = database.appartmentDao.getItems()
 
+    /* -------------------- Öffentliche Funktionen -------------------- */
     /**
      * Liefert alle Items aus der Tabelle
      *
      * @return Alle Items der Tabelle
      */
-    fun getAllItems(): List<AppartmentData> {
-        return database.appartmentDao.getItems()
+    fun getAllItems() {
+        database.appartmentDao.getItems()
     }
-
 
     /**
      * Anzahl der Items in der Tabelle zählen
      *
      * @return Anzahl der Items der Tabelle
      */
-    fun getCount(): Int {
+    suspend fun getCount(): Int {
         return database.appartmentDao.getCount()
     }
-
 
     /**
      * Füllt die Datenbank mit Beispielen, wenn die Datenbank leer ist.
      */
-    fun prepopulateDB() {
+    suspend fun prepopulateDB() {
         try {
             // Add example appartments to database
             if (database.appartmentDao.getCount() == 0) {

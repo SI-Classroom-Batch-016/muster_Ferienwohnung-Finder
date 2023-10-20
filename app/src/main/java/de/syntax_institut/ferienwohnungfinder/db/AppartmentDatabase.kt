@@ -38,7 +38,7 @@ abstract class AppartmentDatabase : RoomDatabase() {
                         context.applicationContext,
                         AppartmentDatabase::class.java,
                         "appartment_database"
-                    ).allowMainThreadQueries().build()
+                    ).build()
                 }
                 return dbInstance
             }
