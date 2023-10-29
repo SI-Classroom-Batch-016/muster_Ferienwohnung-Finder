@@ -1,4 +1,4 @@
-package de.syntax_institut.ferienwohnungfinder.db
+package de.syntax_institut.ferienwohnungfinder.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
