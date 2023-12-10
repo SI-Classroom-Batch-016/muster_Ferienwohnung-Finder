@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import de.syntax_institut.ferienwohnungfinder.data.local.AppartmentDatabase.Companion.getDatabase
 import de.syntax_institut.ferienwohnungfinder.data.Repository
+import de.syntax_institut.ferienwohnungfinder.data.local.getDatabase
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {

@@ -17,31 +17,29 @@ abstract class AppartmentDatabase : RoomDatabase() {
 
     /** Variable für das Interface aus der AppartmentDao */
     abstract val appartmentDao: AppartmentDao
+}
 
-    companion object {
+/** Speichert die Instance der AppartmentDatabase um mit dieser arbeiten zu können */
+private lateinit var INSTANCE: AppartmentDatabase
 
-        /** Speichert die Instance der AppartmentDatabase um mit dieser arbeiten zu können */
-        private lateinit var dbInstance: AppartmentDatabase
+/**
+ * Liefert die Instance der AppartmentDatabase zurück
+ *
+ * @param context Kontext des Aufrufers
+ *
+ * @return AppartmentDatabase
+ */
+fun getDatabase(context: Context): AppartmentDatabase {
 
-        /**
-         * Liefert die Instance der AppartmentDatabase zurück
-         *
-         * @param context Kontext von welchem der Aufruf kam
-         *
-         * @return AppartmentDatabase Context
-         */
-        fun getDatabase(context: Context): AppartmentDatabase {
-            synchronized(this) {
-                // Initialisiere Datenbank
-                if (!this::dbInstance.isInitialized) {
-                    dbInstance = Room.databaseBuilder(
-                        context.applicationContext,
-                        AppartmentDatabase::class.java,
-                        "appartment_database"
-                    ).build()
-                }
-                return dbInstance
-            }
+    synchronized(AppartmentDatabase::class.java) {
+        if (!::INSTANCE.isInitialized) {
+
+            INSTANCE = Room.databaseBuilder(
+                context.applicationContext,
+                AppartmentDatabase::class.java,
+                "appartment_database"
+            ).build()
         }
+        return INSTANCE
     }
 }
